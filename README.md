@@ -33,3 +33,42 @@ Users search and borrow books.
 ```bash
 git clone https://github.com/omarwaleed09/Online-Library-Website  
 cd Online-Library-Website
+```
+
+### 2. Create virtual environment
+```bash
+python -m venv env
+env\Scripts\activate     # Windows  
+source env/bin/activate  # Linux/macOS
+```
+
+### 3. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Apply migrations
+```bash
+python manage.py migrate
+```
+
+### 5. Run the server
+```bash
+python manage.py runserver
+```
+
+Visit http://127.0.0.1:8000 in your browser.
+
+## Structure
+
+- `templates/` — HTML files  
+- `static/` — CSS, JS files  
+- `library_app/` — Views, models, URLs, forms  
+
+## Notes
+
+- Users select role (Admin/User) at signup  
+- Admin sees admin dashboard  
+- User sees user dashboard  
+- Borrowed books are user-specific  
+
