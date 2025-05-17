@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Library - Home Admin</title>
+    <link rel="stylesheet" href="{% static 'CSS/adminhome.css' %}">
+    {% csrf_token %}
+</head>
+<body>
+
+    <div class="nav_bar">
+        <a href="#" class="home_button">Home</a>
+        <a href="{% url 'viewbooksadmin' %}" class="home_button">View Books</a>
+        <a href="{% url 'addnewbook' %}" class="home_button">Add Book</a>
+        <a href="{% url 'logout' %}" class="home_button">Log Out</a>
+    </div>
+    <div class="home_page_sec1">
+        <div class="home_txt">
+            <img id="home_img" src="https://image.librarything.com/pics/pile_english1.jpg" alt="Picture of books">
+        </div>
+        <div class="home_txt">
+            <h1>Welcome to the Admin Panel</h1>
+            <p>Manage your library's collection, add new books, and more.</p>
+        </div>
+    </div>
+
+    <div class="home-text" id="new-books">
+        <p>Explore, Learn, and Grow with Our Vast Collection of Books!</p>
+    </div>
+    <h1>Welcome Admin</h1>
+    <div id="book-list" class="book-container"></div>
+    <script src="{% static 'JS/adminhome.js' %}"></script>
+</body>
+</html>

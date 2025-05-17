@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Library - Home User</title>
+    <link rel="stylesheet" href="{% static 'CSS/userhome.css' %}">
+    {% csrf_token %}
+</head>
+
+<body>
+    <div class="nav_bar">
+        <a href="#" class="home_button">Home</a>
+        <a href="{% url 'viewbooksuser' %}" class="home_button">View Books</a>
+        <a href="{% url 'borrowedbooks' %}" class="home_button">Borrowed Books</a>
+        <a href="{% url 'logout' %}" class="home_button">Log Out</a>
+    </div>
+
+    <div class="Home-page">
+        <h1>Welcome {{ request.user.username }}!</h1>
+    </div>
+
+    <div class="home-text" id="featured-books">
+        <p>Featured Books</p>
+    </div>
+
+    <div id="loading-spinner" class="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="book-container" id="books-container">
+    </div>
+
+    <script src="{% static 'JS/userhome.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Online Library - View Books Admin</title>
+    <link rel="stylesheet" href="{% static 'CSS/viewbooksadmin.css' %}" />
+</head>
+<body>
+    {% csrf_token %}
+    
+    <div class="nav_bar">
+        <a href="{% url 'admin_home' %}" class="home_button">Home</a>
+        <a href="{% url 'viewbooksadmin' %}" class="home_button">View Books</a>
+        <a href="{% url 'addnewbook' %}" class="home_button">Add New Book</a>
+        <a href="{% url 'logout' %}" class="home_button">Log Out</a>
+    </div>
+
+    <h1>Book List</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="book-table-body"></tbody>
+    </table>
+
+    <script src="{% static 'JS/viewbooksadmin.js' %}"></script>
+</body>
+</html>

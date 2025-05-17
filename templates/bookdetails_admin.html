@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Library - Book Details</title>
+    <link rel="stylesheet" href="CSS/bookdetails_admin.css">
+</head>
+<body>
+    <div class="nav_bar">
+        <a href="adminhome.html" class="home_button">Home</a>
+        <a href="viewbooksadmin.html" class="home_button"> View Books</a>
+        <a href="borrowedbooks.html" class="home_button"> Borrowed Books</a>
+        <a href="{% url 'logout' %}" class="home_button">Log Out</a>
+    </div>
+
+    <h1>Book Details</h1>
+
+    <div class="book-details-container">
+        <div class="book-details" id="book-details">
+            <!-- Content will be filled by JavaScript -->
+        </div>
+    </div>
+
+    <script src="JS/bookdetails_admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Add New Book</title>
+    <link rel="stylesheet" href="{% static 'CSS/addnewbook.css' %}" />
+            {% csrf_token %}
+
+</head>
+<body>
+    <div class="nav_bar">
+        <a href="{% url 'admin_home' %}" class="home_button">Home</a>
+        <a href="{% url 'viewbooksadmin' %}" class="home_button">View Books</a>
+        <a href="{% url 'addnewbook' %}" class="home_button">Add New Book</a>
+        <a href="{% url 'logout' %}" class="home_button">Log Out</a>
+    </div>
+
+    <div class="add-book-form">
+        <h2>Add New Book</h2>
+        <form id="add-book-form" enctype="multipart/form-data">
+            <label for="book-name">Book Name:</label>
+            <input type="text" id="book-name" name="title" required />
+
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required />
+
+            <label for="category">Category:</label>
+            <input type="text" id="category" name="category" required />
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <label for="image">Book Image:</label>
+            <input type="file" id="image" name="image" accept="image/*" />
+
+            <button type="submit">Add Book</button>
+        </form>
+    </div>
+
+    <script src="{% static 'JS/addnewbook.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Library - Borrowed Books</title>
+    <link rel="stylesheet" href="{% static 'CSS/borrowedbooks.css' %}">
+    {% csrf_token %}
+</head>
+<body>
+    <div class="nav_bar">
+        <a href="{% url 'user_home' %}" class="home_button">Home</a>
+        <a href="{% url 'viewbooksuser' %}" class="home_button">View Books</a>
+        <a href="{% url 'borrowedbooks' %}" class="home_button">Borrowed Books</a>
+        <a href="{% url 'logout' %}" class="home_button">Log Out</a>
+    </div>
+    <h1>Borrowed Books</h1>
+
+    
+    <div id="loading-spinner" class="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="main-container">
+        <div class="book-list" id="borrowed-books-container">
+            <div id="borrowed-books"></div>
+        </div>
+        <div class="unborrow-section">
+            <h2>Return a Book</h2>
+            <select id="unborrow-select">
+                <option value="">Select a book to return</option>
+            </select>
+            <button id="unborrow-button">Return Book</button>
+            <div id="message-container" class="message-container"></div>
+        </div>
+    </div>
+
+    <script src="{% static 'JS/borrowedbooks.js' %}"></script>
+</body>
+</html>

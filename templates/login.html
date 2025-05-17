@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Online Library - Login</title>
+    <link rel="stylesheet" href="{% static 'CSS/login.css' %}">
+</head>
+<body>
+    <div class="nav_bar">
+        <a href="{% url 'home' %}" class="home_button">Home</a>
+        <a href="{% url 'login' %}" class="home_button">Login</a>
+        <a href="{% url 'signup' %}" class="home_button">Sign Up</a>
+    </div>
+
+    <h1 style="font-weight: 800;margin-top: 90px;">Login</h1>
+
+    <form id="loginForm">
+        {% csrf_token %}
+        <div id="message-container">
+            {% if error %}
+            <div class="message error">{{ error }}</div>
+            {% endif %}
+        </div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+
+        <div>
+            <button type="submit">Login</button>
+        </div>
+    </form>
+
+    <p>Don't have an account? <a href="{% url 'signup' %}" style="text-decoration: underline;">Sign up</a></p>
+
+    <script src="{% static 'JS/login.js' %}"></script>
+</body>
+</html>
