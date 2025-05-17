@@ -9,7 +9,7 @@ Users search and borrow books.
 
 ### Admin
 - Register and log in  
-- Add new books (ID, name, author, category, description)  
+- Add new books (name, author, category, description, image)  
 - View all books  
 - Edit book details  
 - Delete books  
