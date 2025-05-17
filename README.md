@@ -63,7 +63,7 @@ Visit http://127.0.0.1:8000 in your browser.
 
 - `templates/` — HTML files  
 - `static/` — CSS, JS files  
-- `library_app/` — Views, models, URLs, forms  
+- `myapp/` — Views, models, URLs, forms  
 
 ## Notes
 
